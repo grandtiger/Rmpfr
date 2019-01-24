@@ -4,11 +4,9 @@
 # and  with MPFR (Multiple Precision Floating point Reliable) Libraries
 #
 
-# lines below suggested by Uwe Ligges
+#set environment variable for LIB_GMP and LIB_MPFR
+#LIB_GMP=/c/build/gmp
+#LIB_MPFR=/c/build/mpfr
 
-PKG_CPPFLAGS=-I$(LIB_MPFR)/include
-PKG_LIBS=-L$(LIB_MPFR)/lib -lmpfr -lgmp
-## or rather ?
-# PKG_CPPFLAGS=-I$(LIB_MPFR)/include -I$(LIB_GMP)/include
-# PKG_LIBS=-L$(LIB_MPFR)/lib -lmpfr -L$(LIB_GMP)/lib -lgmp 
-
+PKG_CPPFLAGS=-I$(LIB_MPFR)${R_ARCH}/include -I$(LIB_GMP)${R_ARCH}/include
+PKG_LIBS=-L$(LIB_MPFR)${R_ARCH}/lib -lmpfr -L$(LIB_GMP)${R_ARCH}/lib -lgmp 
